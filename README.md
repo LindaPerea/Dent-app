@@ -15,4 +15,3 @@
     <h4>Recommendations:</h4>
   </li>
 </ul>
-  
