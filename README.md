@@ -1,5 +1,5 @@
 <h1 align='center' >Dent App Backend</h1>
-<h3>Pasos para desplegar el proyecto:</h3>
+<h3>Steps to deploy the project:</h3>
 <ul>
   <li>
     <h4>Clone the repository</h4>
