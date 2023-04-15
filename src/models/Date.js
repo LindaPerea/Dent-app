@@ -8,7 +8,7 @@ const Date = sequelize.define('date', {
         autoIncrement: true
     },
     userId: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
     appointmentDate: {
