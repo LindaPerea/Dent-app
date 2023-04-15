@@ -13,5 +13,17 @@
   </li>
   <li>
     <h4>Recommendations:</h4>
+    <ul>
+      <li>
+        <p> 
+          Remember to see the .evn.example for the necessary variables
+        </p>
+      </li>
+      <li>
+        <p> 
+          The project is focused on a service for a dentist app
+        </p>
+      </li>
+    </ul>
   </li>
 </ul>
