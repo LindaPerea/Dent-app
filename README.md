@@ -2,7 +2,9 @@
 <h3>Steps to deploy the project:</h3>
 <ul>
   <li>
-    <h4>Clone the repository</h4>
+    <a href='https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository'>
+      Clone the repository
+    </a>
     <p>git clone https://github.com/No-Country/C10-52-m-reactchallenge-agregar-back</p>
   </li>
   <li>
