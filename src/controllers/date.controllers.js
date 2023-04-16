@@ -26,14 +26,9 @@ const create = catchError(async (req, res) => {
 const getById = catchError(async (req, res) => {
   try {
     const { id } = req.params;
-    const { isTheSameUser, isAdministrator } = req.user;
-
-    if (isTheSameUser || isAdministrator) {
-      const result = await Date.findOne({ where: { id } });
-      if (!result) return res.status(404).json({ message: 'Not Found Date', id });
-      return res.json({ result });
-    };
-    res.json({ message: 'Unauthorized', details: "You can't see this section" });
+    const result = await Date.findOne({ where: { id } });
+    if (!result) return res.status(404).json({ message: 'Not Found Date', id });
+    return res.json({ result });
   } catch (error) {
     throw error;
   }
@@ -41,14 +36,10 @@ const getById = catchError(async (req, res) => {
 
 const getAppointments = catchError(async (req, res) => {
   try {
-    const { isTheSameUser, isAdministrator } = req.user;
     const { id } = req.body;
-    if (isTheSameUser || isAdministrator) {
-      const results = await Date.findAll({ where: { userId: id } });
-      if (!results) return res.status(404).json({ message: 'Not Found appointments', user: userId });
-      return res.json({ results });
-    }
-    res.json({ message: 'Unauthorized', details: "You can't see this section" });
+    const results = await Date.findAll({ where: { userId: id } });
+    if (!results) return res.status(404).json({ message: 'Not Found appointments', user: userId });
+    return res.json({ results });
   } catch (error) {
     throw error
   }
