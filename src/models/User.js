@@ -24,6 +24,10 @@ const User = sequelize.define('user', {
         type: DataTypes.STRING,
         allowNull: false
     },
+    profileType: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
 });
 // aqui es donde se coloca para que no aparezca la contraseña en ningun lado
 User.prototype.toJSON = function () {
