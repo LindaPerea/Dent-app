@@ -13,9 +13,9 @@ const getAll = catchError(async (req, res) => {
 });
 
 const create = catchError(async (req, res) => {
-    const { firstName, lastName, email, password } = req.body;
+    const { firstName, lastName, email, phoneNumber, password } = req.body;
     const encriptedPassword = await bcrypt.hash(password, 10);
-    const result = await User.create({ firstName, lastName, email, password: encriptedPassword, profileType: 1 });
+    const result = await User.create({ firstName, lastName, email, phoneNumber, password: encriptedPassword, profileType: 1 });
     return res.status(201).json(result);
 });
 
@@ -34,9 +34,9 @@ const remove = catchError(async (req, res) => {
 
 const update = catchError(async (req, res) => {
     const { id } = req.params;
-    const { firstName, lastName, email } = req.body;
+    const { firstName, lastName, email, phoneNumber } = req.body;
     const result = await User.update(
-        { firstName, lastName, email },
+        { firstName, lastName, email, phoneNumber },
         { where: { id }, returning: true }
     );
     if (result[0] === 0) return res.sendStatus(404);
