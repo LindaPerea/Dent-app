@@ -1,11 +1,25 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/connection');
 
-const ModelName = sequelize.define('modelName', {
+const Date = sequelize.define('date', {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
     userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    appointmentDate: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
 });
 
-module.exports = ModelName;
+Date.prototype.toJSON = function () {
+    const values = Object.assign({}, this.get());
+    return values;
+};
+
+module.exports = Date;
