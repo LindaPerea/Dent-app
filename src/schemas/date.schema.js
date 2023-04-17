@@ -1,9 +1,10 @@
 const Joi = require('joi');
 
-const createDateSchema = Joi.object({
-  appointmentDate: Joi.string().required(),
+const createAppointmentSchema = Joi.object({
+  dar: Joi.string().required(),
+  hour: Joi.string().required(),
 });
 
 module.exports = {
-  createDateSchema
+  createAppointmentSchema,
 }

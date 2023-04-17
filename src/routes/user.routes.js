@@ -9,6 +9,7 @@ const { verifyIsTheSameUser } = require('../middlewares/verifyIsTheSameUser');
 
 
 const userRouter = express.Router();
+// For new routes you must place the user id in params as userId, but if you are in the users path you should not follow this rule
 
 userRouter.route('/')
     .get(verifyJWT, verifyAdministrator, getAll)
@@ -21,6 +22,6 @@ userRouter.route('/:id')
     .get(verifyJWT, verifyIsTheSameUser, verifyAdministrator, getOne)
     .delete(verifyJWT, verifyIsTheSameUser, verifyAdministrator, remove)
     .put(verifyJWT, verifyIsTheSameUser, verifyAdministrator, update);
-    
+
 
 module.exports = userRouter;

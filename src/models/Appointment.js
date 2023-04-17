@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/connection');
 
-const Date = sequelize.define('date', {
+const Appointment = sequelize.define('appointment', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -11,15 +11,19 @@ const Date = sequelize.define('date', {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    appointmentDate: {
+    day: {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    hour: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    }
 });
 
-Date.prototype.toJSON = function () {
+Appointment.prototype.toJSON = function () {
     const values = Object.assign({}, this.get());
     return values;
 };
 
-module.exports = Date;
+module.exports = Appointment;
