@@ -7,4 +7,4 @@ const createAppointmentSchema = Joi.object({
 
 module.exports = {
   createAppointmentSchema,
-}
+};

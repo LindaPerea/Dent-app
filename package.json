@@ -6,7 +6,8 @@
     "scripts": {
         "start": "node src/server",
         "dev": "nodemon src/server",
-        "seed": "node src/seeders/"
+        "seed": "node src/seeders/",
+        "format": "prettier --write \"**/*.{js,ts,tsx,md}\""
     },
     "keywords": [],
     "author": "",
@@ -21,6 +22,7 @@
         "jsonwebtoken": "^9.0.0",
         "pg": "^8.9.0",
         "pg-hstore": "^2.3.4",
+        "prettier": "^2.8.7",
         "sequelize": "^6.29.0"
     },
     "devDependencies": {

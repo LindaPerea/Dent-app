@@ -6,7 +6,7 @@ class CustomError extends Error {
     this.status = statusCode;
 
     if (object && object.details) {
-      this.details = object.details
+      this.details = object.details;
     }
 
     Error.captureStackTrace(this, this.constructor);
@@ -58,9 +58,8 @@ const getPagingData = (data, page, limit) => {
   return { count, totalPages, currentPage, results };
 };
 
-
 module.exports = {
   CustomError,
   getPagination,
-  getPagingData
+  getPagingData,
 };

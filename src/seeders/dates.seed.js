@@ -1,4 +1,4 @@
-const Appointment = require("../models/Appointment")
+const Appointment = require('../models/Appointment');
 
 const dates = [
   { userId: 1, day: '15/04/2023', hour: '21:00:00' },
@@ -9,11 +9,11 @@ const dates = [
 ];
 
 const dateSeed = async () => {
-  await dates.forEach(async item => {
+  await dates.forEach(async (item) => {
     await Appointment.create(item);
   });
 };
 
 module.exports = {
-  dateSeed
-}
+  dateSeed,
+};
