@@ -19,7 +19,7 @@ const verifyAdministrator = catchError(async (req, res, next) => {
     if (type === 0) return next();
     res.status(403).json({ message: 'Unauthorized', details: 'is not admin' });
   } catch (error) {
-    throw error;
+    next(error);
   }
 });
 // verifyIsTheSameUser
