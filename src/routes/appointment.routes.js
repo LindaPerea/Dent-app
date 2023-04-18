@@ -9,7 +9,7 @@ const {
 const verifyJWT = require('../utils/verifyJWT');
 const verifySchema = require('../schemas/joiSchema.checker');
 const { createAppointmentSchema } = require('../schemas/appointment.schema');
-const { verifyAdministrator } = require('../middlewares/VerifyAdministrator');
+const { verifyAdministrator } = require('../middlewares/verifyAdministrator');
 const { verifyIsTheSameUser } = require('../middlewares/verifyIsTheSameUser');
 
 const appointmentRouter = Router();
