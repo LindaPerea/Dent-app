@@ -10,7 +10,7 @@ const express = require('express');
 const verifyJWT = require('../utils/verifyJWT');
 const verifySchema = require('../schemas/joiSchema.checker');
 const { loginSchema, signupSchema } = require('../schemas/auth.schemas');
-const { verifyAdministrator } = require('../middlewares/VerifyAdministrator');
+const { verifyAdministrator } = require('../middlewares/verifyAdministrator');
 const { verifyIsTheSameUser } = require('../middlewares/verifyIsTheSameUser');
 
 const userRouter = express.Router();
