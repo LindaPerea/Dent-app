@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 const users = [
   {
-    email: 'linda@gnail.com',
+    email: 'linda.hp@hotmail.com',
     firstName: 'Linda',
     lastName: 'Perea',
     phoneNumber: '123456789',
@@ -11,11 +11,19 @@ const users = [
     profileType: 0,
   },
   {
-    email: 'alex@gmail.com',
+    email: 'tato.tandioy@gmail.com',
     firstName: 'Alex',
     lastName: 'Tandioy',
     phoneNumber: '123456789',
     password: '654321',
+    profileType: 0,
+  },
+  {
+    email: 'santiagoruiz9416@gmail.com',
+    firstName: 'Santiago',
+    lastName: 'Ruiz',
+    phoneNumber: '123456789',
+    password: 'santi2307',
     profileType: 0,
   },
   {
