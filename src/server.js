@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 8000;
 
 const main = async () => {
   try {
-    await sequelize.sync({ alter: true });
+    await sequelize.sync({ alter: false });
     console.log('DB conectado');
     app.listen(PORT);
     console.log(`Servidor que se ejecuta en el puerto ${PORT}`);

@@ -11,18 +11,23 @@ const getAll = catchError(async (req, res) => {
   return res.json(results);
 });
 
-const create = catchError(async (req, res) => {
-  const { firstName, lastName, email, phoneNumber, password } = req.body;
-  const encriptedPassword = await bcrypt.hash(password, 10);
-  const result = await User.create({
-    firstName,
-    lastName,
-    email,
-    phoneNumber,
-    password: encriptedPassword,
-    profileType: 1,
-  });
-  return res.status(201).json(result);
+const create = catchError(async (req, res, next) => {
+  try {
+    const { firstName, lastName, email, phoneNumber, password } = req.body;
+    const encriptedPassword = await bcrypt.hash(password, 10);
+    const result = await User.create({
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      password: encriptedPassword,
+      profileType: 1,
+    });
+    if (result === 0) return res.status(500).json({ message: 'Error in the server' });
+    return res.status(201).json(result);
+  } catch (error) {
+    next(error);
+  }
 });
 
 const getOne = catchError(async (req, res) => {
