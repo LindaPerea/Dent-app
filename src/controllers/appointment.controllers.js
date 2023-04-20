@@ -3,7 +3,8 @@ const catchError = require('../utils/catchError');
 
 const getAll = catchError(async (req, res, next) => {
   try {
-    const results = await Date.findAll();
+    const results = await Appointment.findAll();
+    console.log(reuslts);
     return res.json(results);
   } catch (error) {
     next(error);
