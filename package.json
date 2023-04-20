@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/server",
+    "start": "node src/seeders",
     "dev": "nodemon src/server",
     "seed": "node src/seeders/",
     "format": "prettier --write \"**/*.{js,ts,tsx,md}\""

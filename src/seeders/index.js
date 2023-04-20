@@ -3,7 +3,7 @@ const { dateSeed } = require('./appointments.seed');
 const { usersSeed } = require('./users.seed');
 
 const seeders = async () => {
-  await sequelize.sync({ alter: true });
+  await sequelize.sync({ force: true });
   await usersSeed();
   await dateSeed();
   console.log('fin del seed');
