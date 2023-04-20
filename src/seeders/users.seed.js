@@ -7,7 +7,7 @@ const users = [
     firstName: 'Linda',
     lastName: 'Perea',
     phoneNumber: '123456789',
-    password: '123456',
+    password: '00000000',
     profileType: 0,
   },
   {
@@ -15,7 +15,7 @@ const users = [
     firstName: 'Alex',
     lastName: 'Tandioy',
     phoneNumber: '123456789',
-    password: '654321',
+    password: '0000000',
     profileType: 0,
   },
   {
@@ -23,7 +23,7 @@ const users = [
     firstName: 'Santiago',
     lastName: 'Ruiz',
     phoneNumber: '123456789',
-    password: 'santi2307',
+    password: '000000',
     profileType: 0,
   },
   {
