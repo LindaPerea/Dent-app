@@ -7,11 +7,11 @@ const compareSchema = (schema, property) => {
     const { error } = schema.validate(request[property], { abortEarly: false });
     if (error) {
       // throw new CustomError('Schema Validation Error', 400, 'Bad Request', { details: error.details })
-      catchError(
-        response.status(400).json({ message: 'Schema Validation Error', details: error.details })
-      );
+      return response
+        .status(400)
+        .json({ message: 'Schema Validation Error', details: error.details });
     } else {
-      next();
+      return next();
     }
   };
 };

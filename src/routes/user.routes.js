@@ -19,9 +19,9 @@ const userRouter = express.Router();
 userRouter
   .route('/')
   .get(verifyJWT, verifyAdministrator, getAll)
-  .post(verifySchema(signupSchema), create);
+  .post(verifySchema(signupSchema, 'body'), create);
 
-userRouter.route('/login').post(verifySchema(loginSchema), login);
+userRouter.route('/login').post(verifySchema(loginSchema, 'body'), login);
 
 userRouter
   .route('/:id')
