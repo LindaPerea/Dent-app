@@ -9,10 +9,10 @@ const Appointment = sequelize.define('appointment', {
     primaryKey: true,
     autoIncrement: true,
   },
-  // userId: {
-  //   type: DataTypes.INTEGER,
-  //   allowNull: false,
-  // },
+  userId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
   day: {
     type: DataTypes.STRING,
     allowNull: false,
