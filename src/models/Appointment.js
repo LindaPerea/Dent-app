@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/connection');
-const User = require('./User');
+
 
 const Appointment = sequelize.define('appointment', {
   id: {
@@ -22,8 +22,7 @@ const Appointment = sequelize.define('appointment', {
   },
 });
 
-User.hasMany(Appointment);
-Appointment.belongsTo(User);
+
 
 Appointment.prototype.toJSON = function () {
   const values = Object.assign({}, this.get());

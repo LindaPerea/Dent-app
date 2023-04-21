@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/connection');
+const Appointment = require('./Appointment');
 
 
 const User = sequelize.define('user', {
@@ -35,7 +36,8 @@ const User = sequelize.define('user', {
   },
 });
 
-
+User.hasMany(Appointment);
+Appointment.belongsTo(User);
 
 // aqui es donde se coloca para que no aparezca la contraseña en ningun lado
 User.prototype.toJSON = function () {
