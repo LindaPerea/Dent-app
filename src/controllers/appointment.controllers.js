@@ -14,6 +14,8 @@ const create = catchError(async (req, res, next) => {
   try {
     const { day, hour } = req.body;
     const { user } = req;
+    const results = await Appointment.findOne({ where: { day, hour } });
+    if (results) return res.status(400).json({ message: 'se encontro una cita similar' });
     const createDate = { day, hour, userId: user.id };
     const result = Appointment.create(createDate);
     if (!result) return res.status(401).json({ message: 'Fallo al crear la cita' });
