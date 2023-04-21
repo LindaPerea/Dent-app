@@ -17,7 +17,7 @@ const appointmentRouter = Router();
 // For new routes the user id must be placed in params as userId
 appointmentRouter
   .route('/')
-  .get(verifyJWT, verifyAdministrator, getAll)
+  .get(verifyJWT, getAll)
   .post(verifySchema(createAppointmentSchema, 'body'), verifyJWT, create);
 appointmentRouter
   .route('/:userId')
