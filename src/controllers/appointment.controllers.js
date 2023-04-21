@@ -3,7 +3,8 @@ const catchError = require('../utils/catchError');
 
 const getAll = catchError(async (req, res, next) => {
   try {
-    const results = await Date.findAll();
+    const results = await Appointment.findAll();
+    console.log(results);
     return res.json(results);
   } catch (error) {
     next(error);
@@ -53,7 +54,7 @@ const deleteById = catchError(async (req, res, next) => {
     const result = await Appointment.destroy({ where: { id } });
 
     if (result === 0) return res.status(404).json({ message: 'Not Found Date', id });
-    res.status(200).json({ message: 'se elemino con exito' });
+    res.status(200).json({ message: 'se eliminó con exito' });
   } catch (error) {
     next(error);
   }
