@@ -1,6 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/connection');
 
+
 const User = sequelize.define('user', {
   id: {
     type: DataTypes.INTEGER,
@@ -33,6 +34,9 @@ const User = sequelize.define('user', {
     allowNull: false,
   },
 });
+
+
+
 // aqui es donde se coloca para que no aparezca la contraseña en ningun lado
 User.prototype.toJSON = function () {
   const values = Object.assign({}, this.get());
