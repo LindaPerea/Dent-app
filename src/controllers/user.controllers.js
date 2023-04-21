@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const Appointment = require('../models/Appointment');
 
 const getAll = catchError(async (req, res) => {
-  const results = await User.findAll({ include: [ Appointment ]}); //aquí muestra todo
+  const results = await User.findAll(); //aquí muestra todo
   // const results = await User.findAll( { attributes: [ "firstName, lastName"]}); aqui nos muestra solo nombre y apellido
   // const results = await User.findAll( { attributes: { exclude: ["password"]}); aqui muesta todo menos la contraseña
   // en caso desees que la contraseña no se muestre en ninguno de los endpoints se usa en el modelo ir....

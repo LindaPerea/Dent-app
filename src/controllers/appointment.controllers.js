@@ -1,9 +1,10 @@
 const Appointment = require('../models/Appointment');
+const User = require('../models/User');
 const catchError = require('../utils/catchError');
 
 const getAll = catchError(async (req, res, next) => {
   try {
-    const results = await Appointment.findAll();
+    const results = await Appointment.findAll({ include: [ User ]});
     console.log(results);
     return res.json(results);
   } catch (error) {
