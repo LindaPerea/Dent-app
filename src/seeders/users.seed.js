@@ -7,7 +7,7 @@ const users = [
     firstName: 'Linda',
     lastName: 'Perea',
     phoneNumber: '123456789',
-    password: '00000000',
+    password: '123456',
     profileType: 0,
   },
   {
@@ -53,10 +53,10 @@ const users = [
 ];
 
 const usersSeed = async () => {
-  await users.forEach(async (item) => {
+  await Promise.all(  users.map(async (item) => {
     item.password = await bcrypt.hash(item.password, 10);
     await User.create(item);
-  });
+  }));
 };
 
 module.exports = {

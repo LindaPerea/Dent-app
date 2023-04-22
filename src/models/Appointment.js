@@ -2,17 +2,16 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/connection');
 const User = require('./User');
 
-
 const Appointment = sequelize.define('appointment', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  userId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
+  // userId: {
+  //   type: DataTypes.INTEGER,
+  //   allowNull: false,
+  // },
   day: {
     type: DataTypes.STRING,
     allowNull: false,

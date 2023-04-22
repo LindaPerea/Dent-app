@@ -65,6 +65,30 @@ const login = catchError(async (req, res) => {
   return res.json({ user, token });
 });
 
+
+const getAppointments = async (req, res, next) => {
+  try {
+    const {isAdministrator, id} = req.user;
+
+    if(isAdministrator) {
+      const results = await User.findAll({
+        include: {
+          model: Appointment,
+        }
+      });
+      return res.json(results)
+    }
+    const results = await User.findByPk(id,{
+      include: {
+        model: Appointment
+      }
+    });
+    res.json(results)
+  } catch (error) {
+    next(error)
+  }
+};
+
 module.exports = {
   getAll,
   create,
@@ -72,4 +96,5 @@ module.exports = {
   remove,
   update,
   login,
+  getAppointments,
 };

@@ -10,7 +10,7 @@ const verifyAdministrator = catchError(async (req, res, next) => {
     if (!result) return res.status(404);
     const type = result.profileType;
     if (isPublicURL) {
-      // if (type === 0) user.isAdministrator = true;
+      if (type === 0) user.isAdministrator = true;
       if (type === 0 || isTheSameUser) {
         return next();
       }

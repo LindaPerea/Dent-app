@@ -5,10 +5,12 @@ const verifyIsTheSameUser = catchError(async (req, res, next) => {
     req.isPublicURL = true;
     const url = req.originalUrl;
     const user = req.user;
-    if (url.includes('/users')) req.params.userId = req.params.id;
-    const { userId: id } = req.params;
+    const { id } = req.params;
+    if (url.includes('/users')) req.params.userId = id;
+    if(!id) req.params.userId = user.id;
+    const { userId} = req.params;
     // const { userId } = req.body;
-    if (id === String(user.id)) {
+    if (String(userId) === String(user.id)) {
       user.isTheSameUser = true;
     }
     next();

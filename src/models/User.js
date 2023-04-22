@@ -2,7 +2,6 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/connection');
 // const Appointment = require('./Appointment');
 
-
 const User = sequelize.define('user', {
   id: {
     type: DataTypes.INTEGER,
@@ -36,7 +35,8 @@ const User = sequelize.define('user', {
   },
 });
 
-
+// User.hasMany(Appointment, { foreignKey: "userId"});
+// Appointment.belongsTo(User, { foreignKey: "userId"});
 
 // aqui es donde se coloca para que no aparezca la contraseña en ningun lado
 User.prototype.toJSON = function () {

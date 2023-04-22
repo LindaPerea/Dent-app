@@ -9,9 +9,11 @@ const dates = [
 ];
 
 const dateSeed = async () => {
-  await dates.forEach(async (item) => {
-    await Appointment.create(item);
-  });
+  await Promise.all(
+    dates.map(async (item) => {
+      await Appointment.create(item);
+    })
+  )
 };
 
 module.exports = {

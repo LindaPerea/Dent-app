@@ -4,6 +4,7 @@ const {
   getOne,
   remove,
   update,
+  getAppointments,
   login,
 } = require('../controllers/user.controllers');
 const express = require('express');
@@ -22,6 +23,9 @@ userRouter
   .post(verifySchema(signupSchema, 'body'), create);
 
 userRouter.route('/login').post(verifySchema(loginSchema, 'body'), login);
+
+userRouter.route('/appointments')
+  .get(verifyJWT, verifyIsTheSameUser,verifyAdministrator, getAppointments)
 
 userRouter
   .route('/:id')
